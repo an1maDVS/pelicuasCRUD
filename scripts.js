@@ -1,4 +1,3 @@
-// ================== ELEMENTOS ==================
 const btnLogin = document.getElementById("btnLogin");
 const btnLogout = document.getElementById("btnLogout");
 const btnAgregar = document.getElementById("btnAgregar");
@@ -10,14 +9,12 @@ const formLogin = document.getElementById("formLogin");
 
 let peliculaEditando = null;
 
-// ================== USUARIOS DE PRUEBA ==================
 const usuarios = [
   { usuario: "admin", password: "admin123" },
   { usuario: "usuario", password: "1234" },
   { usuario: "demo", password: "demo" }
 ];
 
-// ================== AL CARGAR ==================
 document.addEventListener("DOMContentLoaded", () => {
   const user = localStorage.getItem("usuarioLogueado");
 
@@ -27,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// ================== LOGIN ==================
 formLogin.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -46,13 +42,11 @@ formLogin.addEventListener("submit", (e) => {
   }
 });
 
-// ================== LOGOUT ==================
 btnLogout.addEventListener("click", () => {
   localStorage.removeItem("usuarioLogueado");
   location.reload();
 });
 
-// ================== FUNCIONES ==================
 function entrar() {
   loginSection.style.display = "none";
   mainContent.style.display = "block";
@@ -256,6 +250,7 @@ function eliminarPelicula(id) {
   localStorage.setItem("peliculas", JSON.stringify(peliculas));
   mostrarPeliculas();
 }
+
 
 
 
